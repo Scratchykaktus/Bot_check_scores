@@ -4,12 +4,12 @@ from loader import dp, bot
 # import handlers, keyboards
 # from utils.notify_admins import on_startup_notify
 from utils.commands.bot_commands import set_all_default_commands
-from data.config import (WEBHOOK_URL, WEBHOOK_PATH,
-                         WEBAPP_HOST, WEBAPP_PORT)
+# from data.config import (WEBHOOK_URL, WEBHOOK_PATH,
+#                          WEBAPP_HOST, WEBAPP_PORT)
 
 
 async def on_startup(dispetcher):
-    await set_all_default_commands(dispetcher.bot)
+    await set_all_default_commands(bot)
     # await on_startup_notify(dispetcher)
     # await bot.set_webhook(WEBHOOK_URL, drop_pending_updates=True)
 
