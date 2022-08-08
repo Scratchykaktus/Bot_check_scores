@@ -1,7 +1,7 @@
 from aiogram import executor
 
 from loader import dp, bot
-# import handlers
+# import handlers, keyboards
 # from utils.notify_admins import on_startup_notify
 from utils.commands.bot_commands import set_all_default_commands
 from data.config import (WEBHOOK_URL, WEBHOOK_PATH,
