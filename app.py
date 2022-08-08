@@ -1,4 +1,4 @@
-from aiogram.utils.executor import start_webhook
+from aiogram.utils.executor import start_webhook, start_polling
 
 from loader import dp, bot
 # import handlers, keyboards
@@ -11,20 +11,22 @@ from data.config import (WEBHOOK_URL, WEBHOOK_PATH,
 async def on_startup(dispetcher):
     await set_all_default_commands(dispetcher.bot)
     # await on_startup_notify(dispetcher)
-    await bot.set_webhook(WEBHOOK_URL, drop_pending_updates=True)
+    # await bot.set_webhook(WEBHOOK_URL, drop_pending_updates=True)
 
-
-async def on_shutdown(dispetcher):
-    await bot.delete_webhook()
+#
+# async def on_shutdown(dispetcher):
+#     await bot.delete_webhook()
 
 
 if __name__ == '__main__':
-    start_webhook(
-        dispatcher=dp,
-        webhook_path=WEBHOOK_PATH,
-        skip_updates=True,
-        on_startup=on_startup,
-        on_shutdown=on_shutdown,
-        host=WEBAPP_HOST,
-        port=WEBAPP_PORT,
-    )
+    # start_webhook(
+    #     dispatcher=dp,
+    #     webhook_path=WEBHOOK_PATH,
+    #     skip_updates=True,
+    #     on_startup=on_startup,
+    #     on_shutdown=on_shutdown,
+    #     host=WEBAPP_HOST,
+    #     port=WEBAPP_PORT,
+    # )
+
+    start_polling(dp, on_startup=on_startup)
