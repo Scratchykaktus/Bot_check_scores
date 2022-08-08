@@ -14,8 +14,8 @@ async def cmd_score(message: Message):
     await message.answer(msg)
 
 
-@dp.message_handler(Text(equals='Проверить баллы'))
-async def cmd_score(message: Message):
+@dp.message_handler(Text(equals=['Проверить баллы']))
+async def cmd_score2(message: Message):
     msg = ''
     for i, item in enumerate(req()):
         msg += f'[{i+1}] - {item[1]}\n' \
