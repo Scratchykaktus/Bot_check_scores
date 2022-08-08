@@ -1,2 +1,4 @@
-from . import start
-from . import score
+from .start import dp
+from .score import dp
+
+__all__ = ['dp']
